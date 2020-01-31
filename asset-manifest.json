@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/folk-myth-library/static/css/main.d1b05096.chunk.css",
+    "main.js": "/folk-myth-library/static/js/main.1c9d37f7.chunk.js",
+    "main.js.map": "/folk-myth-library/static/js/main.1c9d37f7.chunk.js.map",
+    "runtime-main.js": "/folk-myth-library/static/js/runtime-main.041c71a3.js",
+    "runtime-main.js.map": "/folk-myth-library/static/js/runtime-main.041c71a3.js.map",
+    "static/js/2.d2f3ed59.chunk.js": "/folk-myth-library/static/js/2.d2f3ed59.chunk.js",
+    "static/js/2.d2f3ed59.chunk.js.map": "/folk-myth-library/static/js/2.d2f3ed59.chunk.js.map",
+    "index.html": "/folk-myth-library/index.html",
+    "precache-manifest.999274c54734dade3e0423054381bb48.js": "/folk-myth-library/precache-manifest.999274c54734dade3e0423054381bb48.js",
+    "service-worker.js": "/folk-myth-library/service-worker.js",
+    "static/css/main.d1b05096.chunk.css.map": "/folk-myth-library/static/css/main.d1b05096.chunk.css.map",
+    "static/js/2.d2f3ed59.chunk.js.LICENSE.txt": "/folk-myth-library/static/js/2.d2f3ed59.chunk.js.LICENSE.txt",
+    "static/media/logo.svg": "/folk-myth-library/static/media/logo.5d5d9eef.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.041c71a3.js",
+    "static/js/2.d2f3ed59.chunk.js",
+    "static/css/main.d1b05096.chunk.css",
+    "static/js/main.1c9d37f7.chunk.js"
+  ]
+}
