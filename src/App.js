@@ -2,10 +2,27 @@ import React from "react";
 import logo from "./logo.svg";
 import "./App.css";
 import { csv } from "d3-fetch";
+import $ from "jquery";
 
-import Table from "./Table.js";
+import SimpleTable from "./SimpleTable.js";
+
+function FilterField(props) {
+  return (
+    <div className="filter">
+      <input id="filter" type="text"></input>
+      <button onClick={props.onClick}>Filter</button>
+    </div>
+  );
+}
 
 class App extends React.Component {
+  filterBooks() {
+    const filter = $("#filter").text;
+    this.setState({
+      searchTerm: filter,
+      filteredBooks: this.state.books.filter(book => book.includes(filter)),
+    });
+  }
   loadBooks() {
     this.setState({ loading: true });
     let promise = csv(
@@ -43,19 +60,13 @@ class App extends React.Component {
     return (
       <div className="App">
         <header className="App-header">
+          <h1>The Folklore and Mythology Library</h1>
           <img src={logo} className="App-logo" alt="logo" />
           <h2>"To Vincent, Who Shared the Quest"</h2>
           <p>&mdash; Esther Casier-Quinn</p>
-          <a
-            className="App-link"
-            href="https://reactjs.org"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Learn React
-          </a>
         </header>
-        <Table data={books} />
+        <FilterField onClick={this.filterBooks} />
+        <SimpleTable data={books} />
       </div>
     );
   }
