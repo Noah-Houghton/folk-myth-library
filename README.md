@@ -16,6 +16,8 @@ You will also see any lint errors in the console.
 
 Builds the app for production and uploads it to the [GitHub Pages](https://noah-houghton.github.io/folk-myth-library/) site.
 
+It may take up to a minute for changes to be reflected. In rare cases it may be necessary to hard-refresh the page (on most systems: `Ctrl-Shift-R`) or clear the cache.
+
 ### `npm test`
 
 Launches the test runner in the interactive watch mode.<br />
