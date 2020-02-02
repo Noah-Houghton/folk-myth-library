@@ -45,6 +45,7 @@ export type TableData = {
   onClick: filterClickHandler;
   activeHeaderIndex: number;
   ascending: boolean;
+  loading: boolean;
 };
 
 export type filterClickHandler = (key: keyof Book) => any;

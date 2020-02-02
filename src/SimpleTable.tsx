@@ -67,11 +67,11 @@ function bookToRow(book: Book) {
       <TableCell>{book.Shelf}</TableCell>
       <TableCell>{book.Publisher}</TableCell>
       <TableCell>{book.Translator}</TableCell>
-      <TableCell>{book.Volume}</TableCell>
+      <TableCell>{book.Volume || "N/A"}</TableCell>
       <TableCell>{book.Region}</TableCell>
       <TableCell>{book.Type}</TableCell>
       <TableCell>{book.Published}</TableCell>
-      <TableCell>{book.Copies}</TableCell>
+      <TableCell>{book.Copies || 1}</TableCell>
       <TableCell>{book.Tags}</TableCell>
       <TableCell>{book.Language}</TableCell>
       <TableCell>{book.Editor}</TableCell>
@@ -81,8 +81,10 @@ function bookToRow(book: Book) {
 
 export function SimpleTable(props: TableData) {
   const classes = useStyles();
-  if (props.data.length === 0) {
+  if (props.loading) {
     return <p>Loading...</p>;
+  } else if (props.data.length <= 0) {
+    return <p>No books found matching your search.</p>;
   }
   const rows = [];
   for (let book of props.data) {

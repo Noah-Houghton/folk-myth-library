@@ -115,6 +115,7 @@ class App extends React.Component<{}, LibraryState> {
         <FilterField handler={this.filterBooks.bind(this)} />
         {reset}
         <SimpleTable
+          loading={this.state.loading}
           ascending={this.state.sortAscending}
           activeHeaderIndex={this.state.activeHeaderIndex}
           onClick={this.sortByColumn.bind(this)}
