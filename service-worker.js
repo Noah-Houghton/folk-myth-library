@@ -14,7 +14,7 @@
 importScripts("https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 importScripts(
-  "/folk-myth-library/precache-manifest.0fd1879b25c98b7058a8490731fecf68.js"
+  "/folk-myth-library/precache-manifest.0b44bdcafc88d60223dfc2a04dcc2d40.js"
 );
 
 self.addEventListener('message', (event) => {
