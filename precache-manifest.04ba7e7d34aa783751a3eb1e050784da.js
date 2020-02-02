@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "583b7e7d1aa591df57ed18e6397112e9",
+    "revision": "3897282c16a222189cbb5f7da6a41d62",
     "url": "/folk-myth-library/index.html"
   },
   {
-    "revision": "e53ee183ce3c90178b1c",
+    "revision": "674a6ca12ec96dcf8d75",
     "url": "/folk-myth-library/static/css/main.9404377e.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/folk-myth-library/static/js/2.e94982b3.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "e53ee183ce3c90178b1c",
-    "url": "/folk-myth-library/static/js/main.15a96ae0.chunk.js"
+    "revision": "674a6ca12ec96dcf8d75",
+    "url": "/folk-myth-library/static/js/main.9507d06f.chunk.js"
   },
   {
     "revision": "22876fb9601484ce536b",

@@ -1,14 +1,14 @@
 {
   "files": {
     "main.css": "/folk-myth-library/static/css/main.9404377e.chunk.css",
-    "main.js": "/folk-myth-library/static/js/main.15a96ae0.chunk.js",
-    "main.js.map": "/folk-myth-library/static/js/main.15a96ae0.chunk.js.map",
+    "main.js": "/folk-myth-library/static/js/main.9507d06f.chunk.js",
+    "main.js.map": "/folk-myth-library/static/js/main.9507d06f.chunk.js.map",
     "runtime-main.js": "/folk-myth-library/static/js/runtime-main.041c71a3.js",
     "runtime-main.js.map": "/folk-myth-library/static/js/runtime-main.041c71a3.js.map",
     "static/js/2.e94982b3.chunk.js": "/folk-myth-library/static/js/2.e94982b3.chunk.js",
     "static/js/2.e94982b3.chunk.js.map": "/folk-myth-library/static/js/2.e94982b3.chunk.js.map",
     "index.html": "/folk-myth-library/index.html",
-    "precache-manifest.9e8fc91900c8e7193f2a5ca1651ab4bf.js": "/folk-myth-library/precache-manifest.9e8fc91900c8e7193f2a5ca1651ab4bf.js",
+    "precache-manifest.04ba7e7d34aa783751a3eb1e050784da.js": "/folk-myth-library/precache-manifest.04ba7e7d34aa783751a3eb1e050784da.js",
     "service-worker.js": "/folk-myth-library/service-worker.js",
     "static/css/main.9404377e.chunk.css.map": "/folk-myth-library/static/css/main.9404377e.chunk.css.map",
     "static/js/2.e94982b3.chunk.js.LICENSE.txt": "/folk-myth-library/static/js/2.e94982b3.chunk.js.LICENSE.txt",
@@ -18,6 +18,6 @@
     "static/js/runtime-main.041c71a3.js",
     "static/js/2.e94982b3.chunk.js",
     "static/css/main.9404377e.chunk.css",
-    "static/js/main.15a96ae0.chunk.js"
+    "static/js/main.9507d06f.chunk.js"
   ]
 }
