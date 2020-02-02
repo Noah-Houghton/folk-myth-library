@@ -14,7 +14,7 @@ You will also see any lint errors in the console.
 
 ### `npm deploy`
 
-Builds the app for production and uploads it to GitHub Pages.
+Builds the app for production and uploads it to the [GitHub Pages](https://noah-houghton.github.io/folk-myth-library/) site.
 
 ### `npm test`
 
