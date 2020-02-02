@@ -8,6 +8,7 @@ import { arrayContainsPartialString } from "./utils";
 
 import { LibraryState, Book, RawBookData } from "./Types";
 
+import { ResetFilter } from "./ResetFilter";
 import { SimpleTable } from "./SimpleTable";
 import { FilterField } from "./FilterField";
 
@@ -87,8 +88,22 @@ class App extends React.Component<{}, LibraryState> {
       });
     };
   }
+  removeFilter() {
+    $("#searchTerm").val("");
+    this.setState({
+      filteredBooks: this.state.allBooks,
+      searchTerm: "",
+      filters: null,
+    });
+  }
   render() {
     const books = this.state.filteredBooks;
+    const hasFiltered = this.state.searchTerm || this.state.filters;
+    const reset = hasFiltered ? (
+      <ResetFilter onClick={this.removeFilter.bind(this)}></ResetFilter>
+    ) : (
+      ""
+    );
     return (
       <div className="App">
         <header className="App-header">
@@ -97,7 +112,8 @@ class App extends React.Component<{}, LibraryState> {
           <h2>"To Vincent, Who Shared the Quest"</h2>
           <p>&mdash; Esther Casier-Quinn</p>
         </header>
-        <FilterField onClick={this.filterBooks} />
+        <FilterField handler={this.filterBooks.bind(this)} />
+        {reset}
         <SimpleTable
           ascending={this.state.sortAscending}
           activeHeaderIndex={this.state.activeHeaderIndex}
