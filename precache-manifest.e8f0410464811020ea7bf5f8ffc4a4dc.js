@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "16a1e92c00039487520c7ead6ee75165",
+    "revision": "9c9ac200059911e95678f0765caf8492",
     "url": "/folk-myth-library/index.html"
   },
   {
-    "revision": "2b5daf081e4709004bbf",
+    "revision": "3b6e53be3fa767ace3fc",
     "url": "/folk-myth-library/static/css/main.a2329f94.chunk.css"
   },
   {
@@ -16,8 +16,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/folk-myth-library/static/js/2.414bd460.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "2b5daf081e4709004bbf",
-    "url": "/folk-myth-library/static/js/main.1ecb7f8f.chunk.js"
+    "revision": "3b6e53be3fa767ace3fc",
+    "url": "/folk-myth-library/static/js/main.ba9f5a6b.chunk.js"
   },
   {
     "revision": "22876fb9601484ce536b",
@@ -25,6 +25,6 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
   },
   {
     "revision": "5d5d9eefa31e5e13a6610d9fa7a283bb",
-    "url": "/folk-myth-library/static/media/logo.5d5d9eef.svg"
+    "url": "/folk-myth-library/static/media/react-logo.5d5d9eef.svg"
   }
 ]);
