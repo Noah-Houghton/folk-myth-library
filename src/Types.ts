@@ -33,11 +33,6 @@ export type RawBookData = {
 export type LibraryState = {
   loading: boolean;
   allBooks: Book[] | [];
-  filteredBooks: Book[] | [];
-  searchTerm: string;
-  filters: Book | null; // ?
-  sortAscending: boolean;
-  activeHeaderIndex: number;
 };
 
 export type TableData = {

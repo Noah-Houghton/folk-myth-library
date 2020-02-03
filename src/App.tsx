@@ -1,33 +1,16 @@
 import React from "react";
-import logo from "./logo.svg";
+import logo from "./react-logo.svg";
 import "./App.css";
 import { csv } from "d3-fetch";
-import $ from "jquery";
+// import $ from "jquery";
 
-import { arrayContainsPartialString } from "./utils";
+import ExpandMoreIcon from "@material-ui/icons/ExpandMore";
 
+import MaterialTable from "material-table";
 import { LibraryState, Book, RawBookData } from "./Types";
 
-import { ResetFilter } from "./ResetFilter";
-import { SimpleTable } from "./SimpleTable";
-import { FilterField } from "./FilterField";
-
 class App extends React.Component<{}, LibraryState> {
-  filterBooks() {
-    const searchTerm = ($("#searchTerm").val() || "") as string;
-    this.setState({
-      filteredBooks: this.state.allBooks.filter((book: Book) => {
-        return searchTerm !== ""
-          ? book.Title.includes(searchTerm) ||
-              arrayContainsPartialString(book.Author, searchTerm) ||
-              arrayContainsPartialString(book.Editor, searchTerm) ||
-              arrayContainsPartialString(book.Tags, searchTerm)
-          : this.state.allBooks;
-      }),
-      searchTerm,
-      filters: this.state.filters,
-    } as LibraryState);
-  }
+  tableRef: any;
   loadBooks() {
     this.setState({ loading: true });
     let promise = csv(
@@ -55,7 +38,6 @@ class App extends React.Component<{}, LibraryState> {
         books.push(book);
       });
       this.setState({ allBooks: books, loading: false });
-      this.filterBooks();
     });
   }
   constructor(props: Object) {
@@ -63,47 +45,52 @@ class App extends React.Component<{}, LibraryState> {
     this.state = {
       loading: true,
       allBooks: [],
-      filteredBooks: [],
-      searchTerm: "",
-      filters: null,
-      activeHeaderIndex: -1,
-      sortAscending: true,
     };
+    this.tableRef = React.createRef<HTMLDivElement>();
   }
   componentDidMount() {
     this.loadBooks();
   }
-  sortByColumn(column: keyof Book) {
-    return () => {
-      this.setState({
-        activeHeaderIndex: Object.keys(this.state.allBooks[0]).indexOf(column),
-        filteredBooks: this.state.filteredBooks.sort((a: Book, b: Book) => {
-          return (this.state.sortAscending
-          ? a[column] < b[column]
-          : a[column] > b[column])
-            ? 1
-            : -1;
-        }),
-        sortAscending: !this.state.sortAscending,
-      });
-    };
-  }
-  removeFilter() {
-    $("#searchTerm").val("");
-    this.setState({
-      filteredBooks: this.state.allBooks,
-      searchTerm: "",
-      filters: null,
-    });
+  scrollToTable = () => {
+    window.scrollTo(0, this.tableRef.current.offsetTop);
+  };
+  renderArray(arr: string[]) {
+    let ret = "";
+    for (let a of arr) {
+      ret += a + ", ";
+    }
+    ret = ret.substr(0, ret.length - 2);
+    return ret;
   }
   render() {
-    const books = this.state.filteredBooks;
-    const hasFiltered = this.state.searchTerm || this.state.filters;
-    const reset = hasFiltered ? (
-      <ResetFilter onClick={this.removeFilter.bind(this)}></ResetFilter>
-    ) : (
-      ""
-    );
+    const books = this.state.allBooks;
+    let cols = [
+      { field: "Title", title: "Title" },
+      {
+        field: "Author",
+        title: "Author(s)",
+        render: (rowData: Book) => this.renderArray(rowData.Author),
+      },
+      { field: "Shelf", title: "Shelf Location" },
+      { field: "Publisher", title: "Publisher" },
+      { field: "Translator", title: "Translator" },
+      { field: "Volume", title: "Volume" },
+      { field: "Region", title: "Region" },
+      { field: "Type", title: "Type" },
+      { field: "Published", title: "Published" },
+      { field: "Copies", title: "# of Copies" },
+      {
+        field: "Tags",
+        title: "Tags",
+        render: (rowData: Book) => this.renderArray(rowData.Tags),
+      },
+      { field: "Language", title: "Language" },
+      {
+        field: "Editor",
+        title: "Editor(s)",
+        render: (rowData: Book) => this.renderArray(rowData.Tags),
+      },
+    ];
     return (
       <div className="App">
         <header className="App-header">
@@ -111,16 +98,18 @@ class App extends React.Component<{}, LibraryState> {
           <img src={logo} className="App-logo" alt="logo" />
           <h2>"To Vincent, Who Shared the Quest"</h2>
           <p>&mdash; Esther Casier-Quinn</p>
+          <ExpandMoreIcon
+            id="HomeArrow"
+            fontSize="large"
+            onClick={this.scrollToTable}
+          ></ExpandMoreIcon>
         </header>
-        <FilterField handler={this.filterBooks.bind(this)} />
-        {reset}
-        <SimpleTable
-          loading={this.state.loading}
-          ascending={this.state.sortAscending}
-          activeHeaderIndex={this.state.activeHeaderIndex}
-          onClick={this.sortByColumn.bind(this)}
+        <div ref={this.tableRef}></div>
+        <MaterialTable
+          columns={cols}
           data={books}
-        />
+          title="Folklore and Mythology Library"
+        ></MaterialTable>
       </div>
     );
   }

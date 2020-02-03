@@ -4,7 +4,7 @@
   "private": true,
   "homepage": "https://noah-houghton.github.io/folk-myth-library",
   "dependencies": {
-    "@material-ui/core": "^4.9.0",
+    "@material-ui/core": "^4.9.1",
     "@testing-library/jest-dom": "^4.2.4",
     "@testing-library/react": "^9.4.0",
     "@testing-library/user-event": "^7.2.1",
@@ -14,6 +14,7 @@
     "@types/react": "^16.9.19",
     "@types/react-dom": "^16.9.5",
     "d3-fetch": "^1.1.2",
+    "material-table": "^1.56.1",
     "react": "^16.12.0",
     "react-dom": "^16.12.0",
     "react-scripts": "3.3.1",

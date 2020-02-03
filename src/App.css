@@ -36,3 +36,27 @@
     transform: rotate(360deg);
   }
 }
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes App-Arrow-Bob {
+  0% {
+    transform: translateY(0);
+  }
+  25% {
+    transform: translateY(-10px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(10px);
+  }
+}
+
+#HomeArrow:hover {
+  cursor: pointer;
+  animation: App-Arrow-Bob 2s linear infinite;
+}
